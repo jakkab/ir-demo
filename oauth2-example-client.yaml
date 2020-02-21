@@ -1,0 +1,19 @@
+apiVersion: hydra.ory.sh/v1alpha1
+kind: OAuth2Client
+metadata:
+  name: my-oauth2-client-0
+  namespace: goat
+spec:
+  grantTypes:
+    - authorization_code
+    - refresh_token
+    - client_credentials
+  responseTypes:
+    - id_token
+    - code
+    - token
+  redirectURIs:
+    - "https://console.kyma.local"
+    - "http://console-dev.kyma.local:4200"
+  scope: "read write"
+  secretName: goat-test-0
